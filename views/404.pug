@@ -1,11 +1,12 @@
 extends layout
 
 block content
-  include ./partials/staticnav.jade
+  include ./partials/header
   div(id="mainHeroC")
     div(class="container")
       div(class="row")
         div(class="col-sm-12 col-lg-8")
           div(id="container")
-            h1 Sorry There Was An Error....
+            h1 Sorry There Was An Error With Your Request.
+            h2 The Route Does Not Exist
             p=error

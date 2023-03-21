@@ -8,7 +8,7 @@ indexRouter.get('^/$|/index(.html)?', (req, res) => {
 indexRouter.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {
-        res.render(404);
+        res.render('404');
     } else if (req.accepts('json')) {
         res.json({message: '404 Route Not Found'})
     } else {
