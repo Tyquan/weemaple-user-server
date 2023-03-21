@@ -1,3 +1,3 @@
 module.exports = [
-    'http://localhost:3000'
+    process.env.ALLOWED_URL_A
 ]
