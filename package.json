@@ -19,8 +19,10 @@
     "debug": "~2.6.9",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "express-async-handler": "^1.2.0",
     "http-errors": "^2.0.0",
     "jsonwebtoken": "^9.0.0",
+    "mongoose": "^7.0.2",
     "morgan": "^1.10.0",
     "pug": "^3.0.2",
     "uuid": "^9.0.0"

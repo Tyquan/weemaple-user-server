@@ -1,22 +1,13 @@
 const express = require('express');
 const settings = require('./settings/appSettings');
 const httpErrors = require('http-errors');
-const path = require('path');
-
-const indexRouter = require('./endpoints/indexRouter');
 
 const app = express();
 settings.configure(app);
 
-app.use(express.static(path.join(__dirname, 'public')));
-// app.use(favicon(path.join(__dirname, 'public/images/fav', 'favicon.ico')));
-
-// view engine setupnpm
-app.set('view engine', 'pug');
-app.set('views', path.join(__dirname, 'views'));
-
 // Routes
-app.use('/', indexRouter);
+app.use('/', require('./endpoints/indexRouter'));
+app.use('/user', require('./endpoints/userEndpoint'));
 // Public Apis
 
 // catch 404 and forward to error handler
