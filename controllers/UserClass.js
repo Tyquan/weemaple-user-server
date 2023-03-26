@@ -16,11 +16,11 @@ class User {
         }
     }
 
-    save() {
+    create(docs) {
         const savedUser = {
             email: this.email,
             password: this.password,
-            metaData: {"name": "", "city": ""}
+            ...docs
         };
         return savedUser;
     }

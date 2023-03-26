@@ -32,6 +32,6 @@ const UserSchema = new mongoose.Schema({
     modifiedDate: Date
 });
 
-const User = mongoose.model("User", UserSchema);
+const MongoUser = mongoose.model("User", UserSchema);
 
-module.exports = User;
+module.exports = MongoUser;
