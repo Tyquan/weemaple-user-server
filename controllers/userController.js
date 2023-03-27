@@ -12,6 +12,7 @@ const userController = {
         if (newUser.checkForMissingInputs()) {
             res.status(500).json({ 'message': "Please provide an Email and Password"});
         }
+        newUser.email = await newUser.encryptPassword(bcrypt.hash, 10);
         newUser.password = await newUser.encryptPassword(bcrypt.hash, 10);
         let savedUser = newUser.create();
         try {
