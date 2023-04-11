@@ -1,10 +1,11 @@
-const mongoose = require("mongoose");
-
-const UserSchema = new mongoose.Schema({
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const mongoose_1 = require("mongoose");
+const UserSchema = new mongoose_1.Schema({
     firstName: {
         type: String
     },
-    middleInitial: {type: String},
+    middleInitial: { type: String },
     lastName: {
         type: String
     },
@@ -13,7 +14,7 @@ const UserSchema = new mongoose.Schema({
         unique: true,
         required: true
     },
-    mobile: {type: String},
+    mobile: { type: String },
     userName: {
         type: String
     },
@@ -22,16 +23,14 @@ const UserSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    lastLogin: {type: Date},
-    intro: {type: String},
-    profile: {type: String},
+    lastLogin: { type: Date },
+    intro: { type: String },
+    profile: { type: String },
     creationDate: {
         type: Date,
         default: Date.now()
     },
     modifiedDate: Date
 });
-
-const MongoUser = mongoose.model("User", UserSchema);
-
-module.exports = MongoUser;
+const MongoUser = (0, mongoose_1.model)("User", UserSchema);
+exports.default = MongoUser;

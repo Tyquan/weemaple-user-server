@@ -1,7 +1,9 @@
-const mongoose = require('mongoose')
+import mongoose from "mongoose";
 
 class MongooseConnection {
-    constructor(databaseURI)
+    databaseURI: string;
+
+    constructor(databaseURI: any)
     {
         this.databaseURI = databaseURI;
     }
@@ -12,7 +14,7 @@ class MongooseConnection {
             mongoose.connection.once('open', () => {
                 console.log('Connected to MongoDB')
             })
-            mongoose.connection.on('error', err => {
+            mongoose.connection.on('error', (err: Error) => {
                 console.log(err)
             })
         } catch (err) {
@@ -21,4 +23,4 @@ class MongooseConnection {
     }
 }
 
-module.exports = MongooseConnection;
+export default MongooseConnection;
