@@ -12,8 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const globals_1 = require("@jest/globals");
 const signupController_1 = require("./signupController");
 (0, globals_1.describe)("signupController module", () => {
-    (0, globals_1.test)('signup function: returns null if data wasnt saved', () => __awaiter(void 0, void 0, void 0, function* () {
-        const signup = yield (0, signupController_1.signUserUp)('', '');
-        (0, globals_1.expect)(signup).toEqual(null);
+    (0, globals_1.test)('empty/invalid signup', () => __awaiter(void 0, void 0, void 0, function* () {
+        const emptySignup = yield (0, signupController_1.signUserUp)('', '');
+        (0, globals_1.expect)(emptySignup).toEqual({ email: '', password: '', success: false, status: 401, message: "You can not continue if one of the input fields are empty. Please enter the email and password" });
     }));
 });

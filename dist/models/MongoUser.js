@@ -11,8 +11,7 @@ const UserSchema = new mongoose_1.Schema({
     },
     email: {
         type: String,
-        unique: true,
-        required: true
+        unique: true
     },
     mobile: { type: String },
     userName: {
@@ -20,8 +19,7 @@ const UserSchema = new mongoose_1.Schema({
     },
     refreshToken: [String],
     password: {
-        type: String,
-        required: true
+        type: String
     },
     lastLogin: { type: Date },
     intro: { type: String },

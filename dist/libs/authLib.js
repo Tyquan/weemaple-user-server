@@ -25,13 +25,24 @@ const isInputsEmpty = (email, password) => {
     return false;
 };
 const prepareUserForDatabaseInsertion = (email, password) => {
-    if (isInputsEmpty(email, password))
-        return { email: '', password: '', success: false };
-    // encrypted and valid user object
+    // Return a "rejected (401 status)" object if arguments are empty
+    if (isInputsEmpty(email, password)) {
+        return {
+            email: email,
+            password: password,
+            success: false,
+            status: 401,
+            message: "You can not continue if one of the input fields are empty. Please enter the email and password"
+        };
+    }
+    ;
+    // Return an encrypted and valid user object
     return {
         email: email,
         password: encryptInput(password),
-        success: true
+        success: true,
+        status: 201,
+        message: "Data is valid, continue with the next service"
     };
 };
 exports.prepareUserForDatabaseInsertion = prepareUserForDatabaseInsertion;

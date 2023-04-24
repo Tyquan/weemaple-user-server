@@ -14,8 +14,8 @@ const authLib_1 = require("../libs/authLib");
 const mongoLib_1 = require("../libs/mongoLib");
 const signUserUp = (email, password) => __awaiter(void 0, void 0, void 0, function* () {
     let newUser = (0, authLib_1.prepareUserForDatabaseInsertion)(email, password);
-    if (newUser.success == false) {
-        return null;
+    if (newUser.success == false || newUser.status !== 201) {
+        return newUser;
     }
     let newSavedUser = yield (0, mongoLib_1.saveNewUserToMongodb)(newUser);
     return newSavedUser;
